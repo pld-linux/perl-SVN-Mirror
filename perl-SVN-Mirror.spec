@@ -1,5 +1,6 @@
 # TODO:
-#	VCP support?
+# - svk requires this pkg; this pkg requires svk - if this somehow
+#   solved then remove echo "n" at make calls
 #
 # Conditional build:
 %bcond_without	tests	# do not perform "make test"
@@ -19,6 +20,8 @@ Source0:	http://search.cpan.org/CPAN/authors/id/C/CL/CLKAO/%{pdir}-%{pnam}-%{ver
 URL:		http://www.geocities.com/easydatabase/
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	perl-subversion >= 1.0.3
+BuildRequires:	perl-VCP
+BuildRequires:	perl-Data-UUID
 BuildRequires:	rpm-perlprov >= 4.1-13
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -30,16 +33,16 @@ Mirror Remote Subversion Repository to local.
 %setup -q -n %{pdir}-%{pnam}-%{version}
 
 %build
-echo -ne "n\nn\nn\n" | %{__perl} Makefile.PL \
+echo "n" | %{__perl} Makefile.PL \
 	INSTALLDIRS=vendor
 %{__make}
 
-%{?with_tests:echo -ne "n\nn\nn\n" | %{__make} test}
+%{?with_tests:echo "n" | %{__make} test}
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
-echo -ne "n\nn\nn\n" | %{__make} install \
+echo "n" | %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
 %clean
