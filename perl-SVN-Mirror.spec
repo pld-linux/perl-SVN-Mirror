@@ -16,6 +16,7 @@ Source0:	http://search.cpan.org/CPAN/authors/id/C/CL/CLKAO/%{pdir}-%{pnam}-%{ver
 # Source0-md5:	9312ab5582d6b87a679a96d3d3777aab
 BuildRequires:	perl-Data-UUID
 %{?with_tests:BuildRequires:	perl-SVN-Simple}
+BuildRequires:	perl-URI
 BuildRequires:	perl-VCP
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	perl-subversion >= 1.0.3
