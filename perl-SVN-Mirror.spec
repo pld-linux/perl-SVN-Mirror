@@ -4,8 +4,8 @@
 %include	/usr/lib/rpm/macros.perl
 %define		pdir	SVN
 %define		pnam	Mirror
-Summary:	SVN::Mirror - Mirror Remote Subversion Repository to local
-Summary(pl):	SVN::Mirror - lokalne mirrorowane zdalnych repozytoriów Subversion
+Summary:	SVN::Mirror - mirror remote subversion repository to local
+Summary(pl):	SVN::Mirror - lokalne mirrorowane zdalnych repozytoriów subversion
 Name:		perl-SVN-Mirror
 Version:	0.52
 Release:	1
@@ -28,10 +28,10 @@ BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-Mirror Remote Subversion Repository to local.
+Mirror remote subversion repository to local.
 
 %description -l pl
-Lokalne mirrorowane zdalnych repozytoriów Subversion.
+Lokalne mirrorowane zdalnych repozytoriów subversion.
 
 %prep
 %setup -q -n %{pdir}-%{pnam}-%{version}
