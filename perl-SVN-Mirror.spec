@@ -1,7 +1,3 @@
-# TODO:
-# - svk requires this pkg; this pkg requires svk - if this somehow
-#   solved then remove echo "n" at make calls
-#
 # Conditional build:
 %bcond_without	tests	# do not perform "make test"
 #
@@ -11,13 +7,13 @@
 Summary:	SVN::Mirror - Mirror Remote Subversion Repository to local
 Summary(pl):	SVN::Mirror - lokalne mirrorowane zdalnych repozytoriów Subversion
 Name:		perl-SVN-Mirror
-Version:	0.35
+Version:	0.36
 Release:	1
 # same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://search.cpan.org/CPAN/authors/id/C/CL/CLKAO/%{pdir}-%{pnam}-%{version}.tar.gz
-# Source0-md5:	6fd53dcd3c60c21490463e8df7d0cec9
+# Source0-md5:	5a9b5936d22bbad63cefa99bd11574e6
 BuildRequires:	perl-Data-UUID
 BuildRequires:	perl-VCP
 BuildRequires:	perl-devel >= 1:5.8.0
@@ -57,5 +53,4 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/*
 %{perl_vendorlib}/SVN/Mirror
 %{perl_vendorlib}/SVN/Mirror.pm
-%{perl_vendorlib}/VCP/Dest/*.pm
 %{_mandir}/man[13]/*
