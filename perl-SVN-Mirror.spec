@@ -9,6 +9,7 @@
 %define	pdir	SVN
 %define	pnam	Mirror
 Summary:	SVN::Mirror - Mirror Remote Subversion Repository to local
+Summary(pl):	SVN::Mirror - lokalne mirrorowane zdalnych repozytoriów Subversion
 Name:		perl-SVN-Mirror
 Version:	0.35
 Release:	1
@@ -17,17 +18,19 @@ License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://search.cpan.org/CPAN/authors/id/C/CL/CLKAO/%{pdir}-%{pnam}-%{version}.tar.gz
 # Source0-md5:	6fd53dcd3c60c21490463e8df7d0cec9
-URL:		http://www.geocities.com/easydatabase/
+BuildRequires:	perl-Data-UUID
+BuildRequires:	perl-VCP
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	perl-subversion >= 1.0.3
-BuildRequires:	perl-VCP
-BuildRequires:	perl-Data-UUID
 BuildRequires:	rpm-perlprov >= 4.1-13
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 Mirror Remote Subversion Repository to local.
+
+%description -l pl
+Lokalne mirrorowane zdalnych repozytoriów Subversion.
 
 %prep
 %setup -q -n %{pdir}-%{pnam}-%{version}
