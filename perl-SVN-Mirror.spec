@@ -2,8 +2,8 @@
 %bcond_without	tests	# do not perform "make test"
 #
 %include	/usr/lib/rpm/macros.perl
-%define	pdir	SVN
-%define	pnam	Mirror
+%define		pdir	SVN
+%define		pnam	Mirror
 Summary:	SVN::Mirror - Mirror Remote Subversion Repository to local
 Summary(pl):	SVN::Mirror - lokalne mirrorowane zdalnych repozytoriów Subversion
 Name:		perl-SVN-Mirror
