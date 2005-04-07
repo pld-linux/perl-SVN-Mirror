@@ -20,6 +20,7 @@ BuildRequires:	perl-SVN-Simple
 %endif
 BuildRequires:	perl-Data-UUID
 BuildRequires:	perl-URI
+BuildRequires:	perl-Sort-Versions
 BuildRequires:	perl-VCP
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	perl-subversion >= 1.0.3
