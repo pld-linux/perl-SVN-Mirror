@@ -7,19 +7,22 @@
 Summary:	SVN::Mirror - mirror remote subversion repository to local
 Summary(pl):	SVN::Mirror - lokalne mirrorowane zdalnych repozytoriów subversion
 Name:		perl-SVN-Mirror
-Version:	0.61
+Version:	0.71
 Release:	1
 # same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-authors/id/C/CL/CLKAO/%{pdir}-%{pnam}-%{version}.tar.gz
-# Source0-md5:	184700fd7c3d2d4e1b244ceb177accd6
+# Source0-md5:	d1efbb08b5b2c7bcb91b952b3329199b
 %if %{with tests}
 BuildRequires:	perl-BSD-Resource
 BuildRequires:	perl-SVN-Simple
 %endif
+BuildRequires:  perl-Class-Accessor
 BuildRequires:	perl-Data-UUID
+BuildRequires:  perl-File-chdir
 BuildRequires:	perl-URI
+BuildRequires:	perl-Term-ReadKey
 BuildRequires:	perl-Sort-Versions
 BuildRequires:	perl-VCP
 BuildRequires:	perl-devel >= 1:5.8.0
@@ -38,16 +41,16 @@ Lokalne mirrorowane zdalnych repozytoriów subversion.
 %setup -q -n %{pdir}-%{pnam}-%{version}
 
 %build
-echo "n" | %{__perl} Makefile.PL \
+yes | tr y n | %{__perl} Makefile.PL \
 	INSTALLDIRS=vendor
-%{__make}
+yes | tr y n | %{__make}
 
-%{?with_tests:echo "n" | %{__make} test}
+%{?with_tests:yes | tr y n | %{__make} test}
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
-echo "n" | %{__make} install \
+yes | tr y n | %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
 %clean
