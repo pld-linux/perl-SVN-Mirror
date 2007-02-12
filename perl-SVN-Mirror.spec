@@ -5,7 +5,7 @@
 %define		pdir	SVN
 %define		pnam	Mirror
 Summary:	SVN::Mirror - mirror remote subversion repository to local
-Summary(pl):	SVN::Mirror - lokalne mirrorowane zdalnych repozytoriów subversion
+Summary(pl.UTF-8):   SVN::Mirror - lokalne mirrorowane zdalnych repozytoriÃ³w subversion
 Name:		perl-SVN-Mirror
 Version:	0.71
 Release:	1
@@ -34,8 +34,8 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 Mirror remote subversion repository to local.
 
-%description -l pl
-Lokalne mirrorowane zdalnych repozytoriów subversion.
+%description -l pl.UTF-8
+Lokalne mirrorowane zdalnych repozytoriÃ³w subversion.
 
 %prep
 %setup -q -n %{pdir}-%{pnam}-%{version}
