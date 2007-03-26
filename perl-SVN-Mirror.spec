@@ -19,9 +19,9 @@ BuildRequires:	perl-BSD-Resource
 BuildRequires:	perl-SVN-Simple
 BuildRequires:	subversion
 %endif
-BuildRequires:  perl-Class-Accessor
+BuildRequires:	perl-Class-Accessor
 BuildRequires:	perl-Data-UUID
-BuildRequires:  perl-File-chdir
+BuildRequires:	perl-File-chdir
 BuildRequires:	perl-URI
 BuildRequires:	perl-Term-ReadKey
 BuildRequires:	perl-Sort-Versions
