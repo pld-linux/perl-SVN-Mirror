@@ -7,16 +7,17 @@
 Summary:	SVN::Mirror - mirror remote subversion repository to local
 Summary(pl.UTF-8):	SVN::Mirror - lokalne mirrorowane zdalnych repozytoriów subversion
 Name:		perl-SVN-Mirror
-Version:	0.71
+Version:	0.73
 Release:	1
 # same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-authors/id/C/CL/CLKAO/%{pdir}-%{pnam}-%{version}.tar.gz
-# Source0-md5:	d1efbb08b5b2c7bcb91b952b3329199b
+# Source0-md5:	170e067de85916f8d0b6a508194fbba3
 %if %{with tests}
 BuildRequires:	perl-BSD-Resource
 BuildRequires:	perl-SVN-Simple
+BuildRequires:	subversion
 %endif
 BuildRequires:  perl-Class-Accessor
 BuildRequires:	perl-Data-UUID
@@ -30,6 +31,8 @@ BuildRequires:	perl-subversion >= 1.0.3
 BuildRequires:	rpm-perlprov >= 4.1-13
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
+
+%define		_noautoreq	'perl(SVK::.*)'
 
 %description
 Mirror remote subversion repository to local.
