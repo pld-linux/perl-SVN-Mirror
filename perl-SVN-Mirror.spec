@@ -1,3 +1,4 @@
+#
 # Conditional build:
 %bcond_without	tests	# do not perform "make test"
 #
@@ -14,11 +15,7 @@ License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-authors/id/C/CL/CLKAO/%{pdir}-%{pnam}-%{version}.tar.gz
 # Source0-md5:	170e067de85916f8d0b6a508194fbba3
-%if %{with tests}
-BuildRequires:	perl-BSD-Resource
-BuildRequires:	perl-SVN-Simple
-BuildRequires:	subversion
-%endif
+URL:		http://search.cpan.org/dist/SVN-Mirror/
 BuildRequires:	perl-Class-Accessor
 BuildRequires:	perl-Data-UUID
 BuildRequires:	perl-File-chdir
@@ -29,6 +26,11 @@ BuildRequires:	perl-VCP
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	perl-subversion >= 1.0.3
 BuildRequires:	rpm-perlprov >= 4.1-13
+%if %{with tests}
+BuildRequires:	perl-BSD-Resource
+BuildRequires:	perl-SVN-Simple
+BuildRequires:	subversion
+%endif
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -44,16 +46,16 @@ Lokalne mirrorowane zdalnych repozytoriów subversion.
 %setup -q -n %{pdir}-%{pnam}-%{version}
 
 %build
-yes | tr y n | %{__perl} Makefile.PL \
+yes n | %{__perl} Makefile.PL \
 	INSTALLDIRS=vendor
-yes | tr y n | %{__make}
+yes n | %{__make}
 
-%{?with_tests:yes | tr y n | %{__make} test}
+%{?with_tests:yes n | %{__make} test}
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
-yes | tr y n | %{__make} install \
+yes n | %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
 %clean
