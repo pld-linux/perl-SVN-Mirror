@@ -1,15 +1,15 @@
 #
 # Conditional build:
 %bcond_without	tests	# do not perform "make test"
-#
-%include	/usr/lib/rpm/macros.perl
+
 %define		pdir	SVN
 %define		pnam	Mirror
+%include	/usr/lib/rpm/macros.perl
 Summary:	SVN::Mirror - mirror remote subversion repository to local
 Summary(pl.UTF-8):	SVN::Mirror - lokalne mirrorowane zdalnych repozytoriów subversion
 Name:		perl-SVN-Mirror
 Version:	0.73
-Release:	1
+Release:	2
 # same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
