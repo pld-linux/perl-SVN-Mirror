@@ -19,9 +19,10 @@ URL:		http://search.cpan.org/dist/SVN-Mirror/
 BuildRequires:	perl-Class-Accessor
 BuildRequires:	perl-Data-UUID
 BuildRequires:	perl-File-chdir
-BuildRequires:	perl-URI
-BuildRequires:	perl-Term-ReadKey
 BuildRequires:	perl-Sort-Versions
+BuildRequires:	perl-Term-ReadKey
+BuildRequires:	perl-TimeDate
+BuildRequires:	perl-URI
 BuildRequires:	perl-VCP
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	perl-subversion >= 1.0.3
@@ -34,7 +35,7 @@ BuildRequires:	subversion
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define		_noautoreq	'perl(SVK::.*)'
+%define		_noautoreq	perl(SVK::.*)
 
 %description
 Mirror remote subversion repository to local.
