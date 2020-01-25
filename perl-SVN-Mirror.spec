@@ -4,7 +4,6 @@
 
 %define		pdir	SVN
 %define		pnam	Mirror
-%include	/usr/lib/rpm/macros.perl
 Summary:	SVN::Mirror - mirror remote subversion repository to local
 Summary(pl.UTF-8):	SVN::Mirror - lokalne mirrorowane zdalnych repozytoriów subversion
 Name:		perl-SVN-Mirror
